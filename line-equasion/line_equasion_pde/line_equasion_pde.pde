@@ -20,6 +20,6 @@ point(300,i);
 stroke(sl);
 
 for(X=0;X<=800;X++){
-Y=m*X+q;
+Y=m*X-q;
 point(300+X,300+Y);
 }
