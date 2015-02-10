@@ -4,6 +4,7 @@ int i;
 background(255);
 
 stroke(#ff0f8f);
+
 for(i=0;i<=600;i++){
 point(20+i,100);
 }
