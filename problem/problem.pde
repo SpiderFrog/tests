@@ -10,7 +10,7 @@ color sl =#ff00f0;
 q=5.5;
 m=-3.3;
 
-for(i=0;i<=600;i++){ //X=these are the meters
+for(i=0;i<=600;i++){ //X=these are the KM
 point(i,300);
 }
 
