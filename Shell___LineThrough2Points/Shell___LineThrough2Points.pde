@@ -17,7 +17,7 @@ float m;  // slope of the line
 float c;  // x-intercept of the line
 
 boolean showAnswers=false;  // a switch to show or hide the display text.
-
+boolean showDistance=false; // d switch to show or hide the display text.
 // end global variable declaration
 
 void setup(){
@@ -37,6 +37,13 @@ void setup(){
 }
 
 void draw(){
+   float X1=point1.xLoc;
+  float Y1=point1.yLoc;
+  float X2=point2.xLoc;
+  float Y2=point2.yLoc;
+
+    float D;
+  D=sqrt(pow((X1-X2),2)+pow((Y1-Y2),2));
   background(255);
   drawAxes();
   point1.drag(mouseX,mouseY);
@@ -47,6 +54,7 @@ void draw(){
   if(showAnswers){
     textAlign(LEFT);
     text("y="+String.format("%.2f",m)+"x+"+String.format("%.2f",c),10,30);
+    text("D="+String.format("%.2f",D),10,100);
     // add more text display code here. It will all toggle visibility when you press "a"
   }
 }
@@ -65,10 +73,8 @@ float PY2;
   // as the slope and x-intercept of your function
   m=(y1-y2)/(x1-x2);
   c=y1-m*x1;
-  
- 
-  // now display the line representing the equation
-  // across the whole width of the screen
+// now display the line representing the equation
+// across the whole width of the screen
 PX1=xCartesianToPix(xMin);
 PX2=xCartesianToPix(xMax);
 
@@ -79,6 +85,19 @@ strokeWeight(3);
 line(PX1,PY1,PX2,PY2);
 }
 
+void drawDistance(){
+ float x1=point1.xLoc;
+  float y1=point1.yLoc;
+  float x2=point2.xLoc;
+  float y2=point2.yLoc;
+  float D;
+  //D=sqrt(pow((x1-x2),2)+pow((y1-y2),2));
+  D=7;
+if(showDistance){
+    textAlign(LEFT);
+    text("D="+String.format("%.2f",D),200,30);
+ }
+}
 
 float xPixToCartesian(int xPix){  // returns the x cartesian coordinate for a given horizontal reference in pixels
   return map(xPix,0,width,xMin,xMax);
@@ -108,7 +127,10 @@ void mouseReleased(){
 
 void keyPressed(){
   if (key=='a') showAnswers=!showAnswers;  // toggle answer visibility when a is pressed
+  if (key=='d') showDistance=!showDistance;
+
 }
+
 
 // this method draws the axes and tick marks
 void drawAxes(){
