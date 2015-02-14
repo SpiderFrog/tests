@@ -15,7 +15,7 @@ Point point2 = new Point();
 
 float m;  // slope of the line
 float c;  // x-intercept of the line
-
+float Xintercept;
 boolean showAnswers=false;  // a switch to show or hide the display text.
 boolean showDistance=false; // d switch to show or hide the display text.
 // end global variable declaration
@@ -44,6 +44,7 @@ void draw(){
 
     float D;
   D=sqrt(pow((X1-X2),2)+pow((Y1-Y2),2));
+  Xintercept= -c/m;
   background(255);
   drawAxes();
   point1.drag(mouseX,mouseY);
@@ -55,6 +56,8 @@ void draw(){
     textAlign(LEFT);
     text("y="+String.format("%.2f",m)+"x+"+String.format("%.2f",c),10,30);
     text("D="+String.format("%.2f",D),10,100);
+     text("C="+String.format("%.2f",c),10,200);
+        text("Xintercept="+String.format("%.2f",Xintercept),10,150);
     // add more text display code here. It will all toggle visibility when you press "a"
   }
 }
