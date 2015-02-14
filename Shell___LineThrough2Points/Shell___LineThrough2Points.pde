@@ -85,19 +85,7 @@ strokeWeight(3);
 line(PX1,PY1,PX2,PY2);
 }
 
-void drawDistance(){
- float x1=point1.xLoc;
-  float y1=point1.yLoc;
-  float x2=point2.xLoc;
-  float y2=point2.yLoc;
-  float D;
-  //D=sqrt(pow((x1-x2),2)+pow((y1-y2),2));
-  D=7;
-if(showDistance){
-    textAlign(LEFT);
-    text("D="+String.format("%.2f",D),200,30);
- }
-}
+
 
 float xPixToCartesian(int xPix){  // returns the x cartesian coordinate for a given horizontal reference in pixels
   return map(xPix,0,width,xMin,xMax);
