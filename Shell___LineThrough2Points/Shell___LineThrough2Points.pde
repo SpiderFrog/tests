@@ -12,12 +12,14 @@ int ySteps=20;  //number of tick marks between yMmin and yMax
 
 Point point1 = new Point();
 Point point2 = new Point();
-
+Point Midpoint = new Point();
 float m;  // slope of the line
 float c;  // x-intercept of the line
 float Xintercept;
-boolean showAnswers=false;  // a switch to show or hide the display text.
-boolean showDistance=false; // d switch to show or hide the display text.
+float XM;
+float YM;
+
+boolean showAnswers=false;  // a switch to show or hide the display text.; // d switch to show or hide the display text.
 // end global variable declaration
 
 void setup(){
@@ -33,16 +35,19 @@ void setup(){
   point1.yLoc=-1.0;
   point2.xLoc=2.0;
   point2.yLoc=0.0;
-  
+
 }
 
 void draw(){
-   float X1=point1.xLoc;
+  float X1=point1.xLoc;
   float Y1=point1.yLoc;
   float X2=point2.xLoc;
   float Y2=point2.yLoc;
-
-    float D;
+  float D;
+    Midpoint.xLoc=(X1+X2)/2;
+  Midpoint.yLoc=(Y1+Y2)/2;
+  XM=(X1+X2)/2;
+  YM=(Y1+Y2)/2;
   D=sqrt(pow((X1-X2),2)+pow((Y1-Y2),2));
   Xintercept= -c/m;
   background(255);
@@ -51,13 +56,16 @@ void draw(){
   point2.drag(mouseX,mouseY);
   point1.display();
   point2.display();
+  Midpoint.display();
+  
   drawLine();
   if(showAnswers){
     textAlign(LEFT);
     text("y="+String.format("%.2f",m)+"x+"+String.format("%.2f",c),10,30);
     text("D="+String.format("%.2f",D),10,100);
-     text("C="+String.format("%.2f",c),10,200);
-        text("Xintercept="+String.format("%.2f",Xintercept),10,150);
+    text("C="+String.format("%.2f",c),10,200);
+    text("Xintercept="+String.format("%.2f",Xintercept),10,150);
+    text("midPoint=("+String.format("%.2f",XM)+";"+String.format("%.2f",YM)+")",10,70);    
     // add more text display code here. It will all toggle visibility when you press "a"
   }
 }
@@ -118,7 +126,7 @@ void mouseReleased(){
 
 void keyPressed(){
   if (key=='a') showAnswers=!showAnswers;  // toggle answer visibility when a is pressed
-  if (key=='d') showDistance=!showDistance;
+ 
 
 }
 
