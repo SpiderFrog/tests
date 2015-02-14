@@ -19,7 +19,8 @@ float Xintercept;
 float XM;
 float YM;
 
-boolean showAnswers=false;  // a switch to show or hide the display text.; // d switch to show or hide the display text.
+boolean showAnswers=false; // a switch to show or hide the display text.
+boolean showBisector=false; // b switch to show or hide the bisector
 // end global variable declaration
 
 void setup(){
@@ -59,6 +60,10 @@ void draw(){
   Midpoint.display();
   
   drawLine();
+  if(showBisector){
+  drawBisector();
+  }
+  
   if(showAnswers){
     textAlign(LEFT);
     text("y="+String.format("%.2f",m)+"x+"+String.format("%.2f",c),10,30);
@@ -96,7 +101,26 @@ strokeWeight(3);
 line(PX1,PY1,PX2,PY2);
 }
 
+void drawBisector(){
+float mB;
+float cB;
+float YB1;
+float XB1;
+float XB2;
+float YB2;
+mB=-1/m;
+cB=YM-XM*mB;
+X=XM+1;
+Y=mB*X+cB;
+XB1=xCartesianToPix(xMin);
+XB2=xCartesianToPix(xMax);
 
+YB1=yCartesianToPix(mB*xMin+cB);
+YB2=yCartesianToPix(mB*xMax+cB);
+stroke(0);
+strokeWeight(3);
+line(XB1,YB1,XB2,YB2);
+}
 
 float xPixToCartesian(int xPix){  // returns the x cartesian coordinate for a given horizontal reference in pixels
   return map(xPix,0,width,xMin,xMax);
@@ -125,8 +149,8 @@ void mouseReleased(){
 }
 
 void keyPressed(){
-  if (key=='a') showAnswers=!showAnswers;  // toggle answer visibility when a is pressed
- 
+  if (key=='a') {showAnswers=!showAnswers; } // toggle answer visibility when a is pressed
+   if (key=='b'){ showBisector=!showBisector;}
 
 }
 
