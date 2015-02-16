@@ -12,6 +12,7 @@ int ySteps=20;  //number of tick marks between yMmin and yMax
 
 Point point1 = new Point();
 Point point2 = new Point();
+
 Point Midpoint = new Point();
 float m;  // slope of the line
 float c;  // x-intercept of the line
@@ -57,6 +58,7 @@ void draw(){
   point2.drag(mouseX,mouseY);
   point1.display();
   point2.display();
+  fill(255,150,0);
   Midpoint.display();
   
   drawLine();
