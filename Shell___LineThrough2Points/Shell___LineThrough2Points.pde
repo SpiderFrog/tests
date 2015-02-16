@@ -117,7 +117,7 @@ XB2=xCartesianToPix(xMax);
 
 YB1=yCartesianToPix(mB*xMin+cB);
 YB2=yCartesianToPix(mB*xMax+cB);
-stroke(0);
+stroke(#f8a0ff);
 strokeWeight(3);
 line(XB1,YB1,XB2,YB2);
 }
