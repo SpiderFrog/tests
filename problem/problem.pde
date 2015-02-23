@@ -26,6 +26,7 @@ for (i=0;i<=600;i=i+5){
 }
 
 
-for(X=0;X<=800;X=X+0.01){
-Y=m*X-q*5; //so that on the plane every 5 pixel are 1 unit
+for(X=-300;X<=800;X=X+0.01){
+Y=-m*X-q*5; //so that on the plane every 5 pixel are 1 unit
 point(300+X,300+Y);
+}
