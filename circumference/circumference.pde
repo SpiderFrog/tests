@@ -35,15 +35,18 @@ R=10;
 point(Xc*10+300,-Yc*10+300);
 
 
-for(x=-300;x<=600;x=x+1){
-  for(y=-300;y<=600;y=y+1){
+for(x=-300;x<=600;x=x+0.1){
+  for(y=-300;y<=600;y=y+0.1){
 
-     r=sqrt((pow((x-Xc),2)+pow((y-Yc),2)));
-   if(r==R){point(x*10+300,-y*10+300);}
+     r=(pow((x-Xc),2)+pow((y-Yc),2));
+   
+   r=round(r);
+   
+   if(r==pow(R,2)){point(x*10+300,-y*10+300);}
      
   }
   }
-stroke(255,0,0,100);
+/*stroke(255,0,0,100);
 noFill();
 ellipse(Xc*10+300,-Yc*10+300,R*20,R*20);
-
+*/
