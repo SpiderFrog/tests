@@ -11,6 +11,7 @@ float c=0;
 int H=30;
 int L=0;
 int F=0;
+int F1=0;
 float m1;
 float c1;
 float PX;
@@ -28,10 +29,10 @@ void draw(){
   background(255);
 DrawGraph();
 stroke(255,0,0);
-  DrawLine(m,c);
+  DrawLine(m,c,F);
   if(Line2){
             stroke(0,255,0);
-            DrawLine(m1,c1);
+            DrawLine(m1,c1,F1);
             PX=(c-c1)/(m-m1);
             PY=m1*PX+c1;
             stroke(0);
@@ -72,7 +73,7 @@ for (i=0;i<=S;i=i+U){
 }
 }
 
-void DrawLine(float M,float C){
+void DrawLine(float M,float C,int F){
 float x;
 float y;
 
@@ -137,7 +138,42 @@ if(key==CODED){
   }
   if(H==30 && L==0 ){
     print("input m= ");
+    
     switch(key){
+    
+         case '0':
+                    m=m*10+0;println(m);F=0;break;
+           case '1':
+                    m=m*10+1;println(m);F=0;break;
+           case '2':
+                    m=m*10+2;println(m);F=0;break;
+           case '3':
+                    m=m*10+3;println(m);F=0;break;           
+           case '4':
+                    m=m*10+4;println(m);F=0;break;           
+           case '5':
+                    m=m*10+5;println(m);F=0;break;
+           case '6':
+                    F=0;m=m*10+6;println(m);break;
+           case '7':
+                    m=m*10+7;F=0;println(m);break;
+           case '8':
+                    m=m*10+8;F=0;println(m);break;
+           case '9':
+                    m=m*10+9;F=0;println(m);break;
+           case '/':
+                    F=1;println("Infinity");break;
+    
+    }
+     
+    if(key==BACKSPACE){m=0;}
+     
+     if(key=='-' && m>=0){m=m*-1;}
+     if(key=='+' && m<=0){m=m*-1;}
+    
+    
+    
+    /*switch(key){
       
            case '0':
                     m=0;println(m);F=0;break;
@@ -225,13 +261,46 @@ if(key==CODED){
            case 'ì':
                     F=1;println("Infinity");break;
            default :
-                    println();break;
+                    println();break; 
       }
- 
+ */
    }
    
   if(H==50 && L==0 ){
     print("input c= ");
+   
+   switch(key){
+    
+         case '0':
+                    c=c*10+0;println(c);break;
+           case '1':
+                    c=c*10+1;println(c);break;
+           case '2':
+                    c=c*10+2;println(c);break;
+           case '3':
+                    c=c*10+3;println(c);break;           
+           case '4':
+                    c=c*10+4;println(c);break;           
+           case '5':
+                    c=c*10+5;println(c);break;
+           case '6':
+                    c=c*10+6;println(c);break;
+           case '7':
+                    c=c*10+7;println(c);break;
+           case '8':
+                    c=c*10+8;println(c);break;
+           case '9':
+                    c=c*10+9;println(c);break;
+     
+    
+    }
+     
+    if(key==BACKSPACE){c=0;}
+     
+     if(key=='-' && c>=0){c=c*-1;}
+     if(key=='+' && c<=0){c=c*-1;}
+    
+   /*
     switch(key){
       
       case '0':
@@ -319,10 +388,44 @@ if(key==CODED){
            default :
                     println();break;
       }
- 
+ */
    }
  if(H==30 && L==100 ){
     print("input m1= ");
+   
+   switch(key){
+    
+         case '0':
+                    m1=m1*10+0;println(m1);F1=0;break;
+           case '1':
+                    m1=m1*10+1;println(m1);F1=0;break;
+           case '2':
+                    m1=m1*10+2;println(m1);F1=0;break;
+           case '3':
+                    m1=m1*10+3;println(m1);F1=0;break;           
+           case '4':
+                    m1=m1*10+4;println(m1);F1=0;break;           
+           case '5':
+                    m1=m1*10+5;println(m1);F1=0;break;
+           case '6':
+                    F1=0;m1=m1*10+6;println(m1);break;
+           case '7':
+                    m1=m1*10+7;F1=0;println(m1);break;
+           case '8':
+                    m1=m1*10+8;F1=0;println(m1);break;
+           case '9':
+                    m1=m1*10+9;F1=0;println(m1);break;
+           case '/':
+                    F1=1;println("Infinity");break;
+    
+    }
+     
+    if(key==BACKSPACE){m1=0;}
+     
+     if(key=='-' && m1>=0){m1=m1*-1;}
+     if(key=='+' && m1<=0){m1=m1*-1;}
+    
+   /*
     switch(key){
       
            case '0':
@@ -412,11 +515,44 @@ if(key==CODED){
            default :
                     println();break;
       }
- 
+ */
    }
    
   if(H==50 && L==100 ){
     print("input c1= ");
+   
+    switch(key){
+    
+         case '0':
+                    c1=c1*10+0;println(c1);break;
+           case '1':
+                    c1=c1*10+1;println(c1);break;
+           case '2':
+                    c1=c1*10+2;println(c1);break;
+           case '3':
+                    c1=c1*10+3;println(c1);break;           
+           case '4':
+                    c1=c1*10+4;println(c1);break;           
+           case '5':
+                    c1=c1*10+5;println(c1);break;
+           case '6':
+                    c1=c1*10+6;println(c1);break;
+           case '7':
+                    c1=c1*10+7;println(c1);break;
+           case '8':
+                    c1=c1*10+8;println(c1);break;
+           case '9':
+                    c1=c1*10+9;println(c1);break;
+     
+    
+    }
+     
+    if(key==BACKSPACE){c1=0;}
+     
+     if(key=='-' && c1>=0){c1=c1*-1;}
+     if(key=='+' && c1<=0){c1=c1*-1;}
+    
+   /*
     switch(key){
       
       case '0':
@@ -504,7 +640,7 @@ if(key==CODED){
            default :
                     println();break;
       }
- 
+ */
    }
 
   
