@@ -161,7 +161,25 @@ if(key==CODED){
                     m=m*10+8;F=0;println(m);break;
            case '9':
                     m=m*10+9;F=0;println(m);break;
+           case '!':
+                    m=m+0.1;println(m);F=0;break;
+           case '"':
+                    m=m+0.2;println(m);F=0;break;
+           case '£':
+                    m=m+0.3;println(m);F=0;break;           
+           case '$':
+                    m=m+0.4;println(m);F=0;break;           
+           case '%':
+                    m=m+0.5;println(m);F=0;break;
+           case '&':
+                    F=0;m=m+0.6;println(m);break;
            case '/':
+                    m=m+0.7;F=0;println(m);break;
+           case '(':
+                    m=m+0.8;F=0;println(m);break;
+           case ')':
+                    m=m+0.9;F=0;println(m);break;
+           case 'ì':
                     F=1;println("Infinity");break;
     
     }
@@ -291,7 +309,24 @@ if(key==CODED){
                     c=c*10+8;println(c);break;
            case '9':
                     c=c*10+9;println(c);break;
-     
+             case '!':
+                    c=c+0.1;println(c);F=0;break;
+           case '"':
+                    c=c+0.2;println(c);F=0;break;
+           case '£':
+                    c=c+0.3;println(c);F=0;break;           
+           case '$':
+                    c=c+0.4;println(c);F=0;break;           
+           case '%':
+                    c=c+0.5;println(c);F=0;break;
+           case '&':
+                    F=0;c=c+0.6;println(c);break;
+           case '/':
+                    c=c+0.7;F=0;println(c);break;
+           case '(':
+                    c=c+0.8;F=0;println(c);break;
+           case ')':
+                    c=c+0.9;F=0;println(c);break;
     
     }
      
@@ -415,7 +450,25 @@ if(key==CODED){
                     m1=m1*10+8;F1=0;println(m1);break;
            case '9':
                     m1=m1*10+9;F1=0;println(m1);break;
+             case '!':
+                    m1=m1+0.1;println(m1);F=0;break;
+           case '"':
+                    m1=m1+0.2;println(m1);F=0;break;
+           case '£':
+                    m1=m1+0.3;println(m1);F=0;break;           
+           case '$':
+                    m1=m1+0.4;println(m1);F=0;break;           
+           case '%':
+                    m1=m1+0.5;println(m1);F=0;break;
+           case '&':
+                    F=0;m1=m1+0.6;println(m1);break;
            case '/':
+                    m1=m1+0.7;F=0;println(m1);break;
+           case '(':
+                    m1=m1+0.8;F=0;println(m1);break;
+           case ')':
+                    m1=m1+0.9;F=0;println(m1);break;
+           case 'ì':
                     F1=1;println("Infinity");break;
     
     }
@@ -543,7 +596,24 @@ if(key==CODED){
                     c1=c1*10+8;println(c1);break;
            case '9':
                     c1=c1*10+9;println(c1);break;
-     
+           case '!':
+                    c1=c1+0.1;println(c1);F=0;break;
+           case '"':
+                    c1=c1+0.2;println(c1);F=0;break;
+           case '£':
+                    c1=c1+0.3;println(c1);F=0;break;           
+           case '$':
+                    c1=c1+0.4;println(c1);F=0;break;           
+           case '%':
+                    c1=c1+0.5;println(c1);F=0;break;
+           case '&':
+                    F=0;c1=c1+0.6;println(c1);break;
+           case '/':
+                    c1=c1+0.7;F=0;println(c1);break;
+           case '(':
+                    c1=c1+0.8;F=0;println(c1);break;
+           case ')':
+                    c1=c1+0.9;F=0;println(c1);break; 
     
     }
      
