@@ -116,9 +116,9 @@ void input(){
   //boxes
   if(L==0){
   fill(0,0,255,100);
-  rect(0,H,50,30);
+  rect(0,H,60,30);
    }
-   else{fill(0,0,155,100);rect(L,H,50,30);}
+   else{fill(0,0,155,100);rect(L,H,60,30);}
 
   
   }
